@@ -25,11 +25,14 @@ function reparteTarjetas() {
 
     tarjetasBarajadas.forEach(function(elemento) {
         var tarjeta = document.createElement("div");
-        tarjeta.className = "tarjeta";
 
         tarjeta.innerHTML = 
-            "<div class='tarjeta__contenido'>" +
+            "<div class='tarjeta' data-valor=" +
                 elemento +
+                ">" +
+                "<div class='tarjeta__contenido'>" +
+                elemento +
+                "</div>"
             "</div>";
 
         mesa.appendChild(tarjeta);
@@ -37,7 +40,27 @@ function reparteTarjetas() {
 }
 
 function descubrir() {
+    var descubiertas;
+    var totalDescubiertas = document.querySelectorAll(".descubierta");
+    
+    if(totalDescubiertas.length > 1) {
+        return;
+    }
+
     this.classList.add("descubierta");
+
+    descubiertas = document.querySelectorAll(".descubierta");
+
+    if(descubiertas.length < 2) {
+        return;
+    }
+
+    if(descubiertas[0].dataset.valor === descubiertas[1].dataset.valor) {
+        console.log("Acierto");
+    }else{
+        console.log("Error");
+    }
+
 }
 
 reparteTarjetas();
