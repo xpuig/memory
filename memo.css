@@ -1,0 +1,64 @@
+body {
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    position: relative;
+
+}
+
+#mesa {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    max-width: 50rem;
+    margin: auto;
+}
+
+.tarjeta {
+    position:relative;
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    width: 6rem;
+    height: 6rem;
+    margin: .5rem;
+    display: flex;
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.2);
+    border-radius: .5rem;
+    transition: .3s;
+    cursor: pointer;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+.tarjeta__contenido {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: rotateY(-180deg);
+    backface-visibility: hidden;
+    background-color: white;
+    box-shadow: 0 .2rem .5rem rgba(0,0,0,.2);
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5rem;
+    padding-top: .4rem;
+}
+
+tarjeta__contenido::selection {
+    background: transparent;
+}
+
+.tarjeta.descubierta {
+    transform: rotateY(-180deg);
+}
