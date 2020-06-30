@@ -1,7 +1,3 @@
-var grupoTarjetas = [ "🦁", "🦄", "🦊", "🐷", "🐙", "🐝", "🐘", "🐵", "🐯" ];
-
-var totalTarjetas = grupoTarjetas.concat(grupoTarjetas); // Duplicar tarjetas
-
 function barajaTarjetas() {
 
     var resultado;
@@ -38,35 +34,3 @@ function reparteTarjetas() {
         mesa.appendChild(tarjeta);
     });
 }
-
-function descubrir() {
-    var descubiertas;
-    var totalDescubiertas = document.querySelectorAll(".descubierta");
-    
-    if(totalDescubiertas.length > 1) {
-        return;
-    }
-
-    this.classList.add("descubierta");
-
-    descubiertas = document.querySelectorAll(".descubierta");
-
-    if(descubiertas.length < 2) {
-        return;
-    }
-
-    if(descubiertas[0].dataset.valor === descubiertas[1].dataset.valor) {
-        console.log("Acierto");
-    }else{
-        console.log("Error");
-    }
-
-}
-
-reparteTarjetas();
-
-document.querySelectorAll(".tarjeta").forEach(
-    function(elemento) {
-        elemento.addEventListener("click", descubrir);
-    }
-);
