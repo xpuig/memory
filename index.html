@@ -7,15 +7,73 @@
     <link rel="stylesheet" href="memo.css">
 </head>
 <body>
+    <header>
+        <div class="contador-item">
+            <h4 class="cabecera-titulo">
+                Tiempo:
+            </h4>
+            <div class="cabecera-num">
+                <span id="minutos">00</span>:<span id="segundos">00</span>
+            </div>
+        </div>
+        <div class="contador-item">
+            <h4 class="cabecera-titulo">
+                Movimientos:
+            </h4>
+            <div class="cabecera-num">
+                <span id="mov">00</span>/<span id="mov-total">20</span>
+            </div>
+        </div>
+        <div class="contador-item">
+            <h4 class="cabecera-titulo">
+                Nivel:
+            </h4>
+            <div class="cabecera-num">
+                <span id="nivel">01</span>
+            </div>
+        </div>
+    </header>
     <main>
-        <div id="mesa" class="mesa">
-                
+        <div id="mesa" class="mesa"></div>
+
+        <div id="subeNivel" class="sube-nivel">
+            <div class="modal">
+                <h2>¡Muy bien!</h2>
+                <button id="subir">Siguiente nivel</button>
+                <button class="reiniciar">Reiniciar</button>
+            </div>
+        </div>
+
+        <div id="gameOver" class="game-over">
+            <div class="modal">
+                <h2>¡Oh no!</h2>
+                <p>Te has quedado sin movimientos</p>
+                <button class="reiniciar">Reiniciar</button>
+            </div>
+        </div>
+
+        <div id="endGame" class="end-game">
+            <div class="modal">
+                <h2>¡Enhorabuena!</h2>
+                <p>todos los niveles superados</p>
+                <button class="reiniciar">Reiniciar</button>
+            </div>
         </div>
     </main>
+
+    <audio src="sonidos/acierto.mp3" id="sonido-acierto" class="sonido" preload="auto"></audio>
+    <audio src="sonidos/error.mp3" id="sonido-error" class="sonido" preload="auto"></audio>
+    <audio src="sonidos/carta.mp3" id="sonido-carta" class="sonido" preload="auto"></audio>
+
     <script type="text/javascript" src="js/variables-globales.js"></script>
     <script type="text/javascript" src="js/baraja-reparte.js"></script>
     <script type="text/javascript" src="js/descubre-compara.js"></script>
     <script type="text/javascript" src="js/acierto-error.js"></script>
+    <script type="text/javascript" src="js/cronometro.js"></script>
+    <script type="text/javascript" src="js/contador.js"></script>
+    <script type="text/javascript" src="js/finalizar.js"></script>
+    <script type="text/javascript" src="js/cambia-nivel.js"></script>
+    <script type="text/javascript" src="js/game-over.js"></script>
     <script type="text/javascript" src="js/iniciar.js"></script>
 </body>
 </html>

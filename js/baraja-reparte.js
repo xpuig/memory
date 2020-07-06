@@ -1,6 +1,7 @@
-function barajaTarjetas() {
+function barajaTarjetas(lasTarjetas) {
 
     var resultado;
+    var totalTarjetas = lasTarjetas.concat(lasTarjetas); // Duplicar tarjetas
 
     resultado = totalTarjetas.sort(function() { // sort aplica una ordenación en Unicode
         return 0.5 - Math.random(); // POR ACLARAR 
@@ -12,10 +13,10 @@ function barajaTarjetas() {
     return resultado; // Se detiene la ejecución de la función
 }
 
-function reparteTarjetas() {
+function reparteTarjetas(lasTarjetas) {
 
     var mesa = document.querySelector("#mesa");
-    var tarjetasBarajadas = barajaTarjetas();
+    var tarjetasBarajadas = barajaTarjetas(lasTarjetas);
 
     mesa.innerHTML = "";
 
