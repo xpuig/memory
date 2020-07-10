@@ -2,9 +2,9 @@
     --bg: #fafafa;
     --font: "Archivo", sans-serif;
     --font-display: "Archivo Narrow", sans-serif;
-    --hotpink: #e94057;
-    --orange: #f27121;
-    --gradient: linear-gradient(35deg, var(--orange), var(--hotpink));
+    --violet: #B229FF;
+    --blue: #28D0FD;
+    --gradient: linear-gradient(35deg, var(--blue), var(--violet));
   }
   
   body {
